@@ -1,0 +1,30 @@
+{
+  "name": "mpt_ur9",
+  "version": "1.0.0",
+  "description": "Русскоязычный AI-агент погоды с удалённым Open-Meteo MCP",
+  "scripts": {
+    "start": "node --env-file=.env scripts/start.mjs",
+    "check:mcp": "node --env-file=.env scripts/check-mcp.mjs",
+    "check:agent": "node --env-file=.env scripts/check-agent.mjs",
+    "check:error": "node scripts/check-error.mjs",
+    "check": "tsc --noEmit",
+    "test": "node --test --test-isolation=none tests/*.test.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "ai": "^7.0.179",
+    "eve": "^1.3.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Погода · MCP агент</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<main>
+  <header><div class="mark">☁</div><div><h1>Погода рядом</h1><p>AI-помощник · Open-Meteo через MCP</p></div><button id="reset" class="secondary">Новый чат</button></header>
+  <div id="status" role="status">Проверка настройки модели…</div>
+  <section class="layout">
+    <div class="chat-panel">
+      <div id="messages" role="log" aria-live="polite"><article class="assistant">Задайте вопрос о погоде в любом городе. Я получу свежие данные через удалённый MCP-сервер.</article></div>
+      <div class="examples"><button data-question="Какая сейчас погода в Екатеринбурге?">Екатеринбург</button><button data-question="А в Казани?">А в Казани?</button></div>
+      <form id="form"><label class="sr-only" for="message">Вопрос о погоде</label><input id="message" maxlength="2000" placeholder="Какая сейчас погода в Екатеринбурге?" required autocomplete="off"><button id="send">Спросить ↗</button></form>
+    </div>
+    <aside><h2>Журнал MCP</h2><p class="hint">Здесь видна цепочка реальных вызовов: инструмент, параметры города и ответ сервера.</p><code class="endpoint">weather.chukai.io/mcp</code><div id="trace"><p class="empty">Вызовов пока нет</p></div></aside>
+  </section>
+  <footer>Пользователь → AI-агент → удалённый MCP → Open-Meteo → ответ</footer>
+</main><script type="module" src="/app.js"></script>
+</body></html>
